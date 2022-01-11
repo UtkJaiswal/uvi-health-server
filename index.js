@@ -10,7 +10,9 @@ app.use(cors());
 
 mongoose.connect("mongodb+srv://dbUser:4F_E$$4T.nLSneb@cluster0.99wh3.mongodb.net/uvi-health?retryWrites=true&w=majority")
 
-
+app.get('/', (req,res)=>{
+    return res.json("Hello World")
+})
 app.get('/getAppointments',(req,res)=>{
     AppointmentModel.find({},(err,result)=>{
         if(err)
